@@ -65,3 +65,7 @@ opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 opt.hlsearch = true
+
+opt.foldmethod = "indent"
+opt.foldenable = false
+opt.relativenumber = true

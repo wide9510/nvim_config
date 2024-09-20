@@ -9,16 +9,14 @@ return {
 		local dap = require("dap")
 		local dapui = require("dapui")
 		local dapvscode = require("dap.ext.vscode")
+		local toggleterm = require("toggleterm")
 
 		require("dapui").setup()
 
 		vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
 
 		vim.keymap.set("n", "<F5>", function()
-			-- dapvscode.json_decode = json5.parse
-			dapvscode.load_launchjs(nil, { cppdbg = { "c", "cpp" } })
 			dap.continue()
-			dapui.open()
 		end)
 		vim.keymap.set("n", "<F10>", function()
 			dap.step_over()
@@ -35,18 +33,20 @@ return {
 		vim.keymap.set("n", "<Leader>bs", function()
 			dap.set_breakpoint()
 		end, {desc = "Set breakpoint"})
+		vim.keymap.set("n", "<Leader>bo", function()
+			dapui.toggle()
+		end, {desc = "Toggle UI"})
+		vim.keymap.set("n", "<Leader>bl", function()
+			dapvscode.load_launchjs(nil, { cppdbg = { "c", "cpp" } })
+			dap.continue()
+		end, {desc = "Start debugger"})
 
-		dap.listeners.before.attach.dapui_config = function()
+		dap.listeners.after.attach.dapui_config = function()
 			dapui.open()
 		end
 		dap.listeners.before.launch.dapui_config = function()
 			dapui.open()
-		end
-		dap.listeners.after.event_terminated.dapui_config = function()
-			dapui.close()
-		end
-		dap.listeners.before.event_exited.dapui_config = function()
-			dapui.close()
+			vim.cmd("ToggleTerm")
 		end
 
 		dap.adapters.cppdbg = {

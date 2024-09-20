@@ -14,6 +14,8 @@ return {
 			{ "<leader>s",  group = "[S]earch" },
 			{ "<leader>t",  group = "[T]erminal" },
 			{ "<leader>w",  group = "[W]orkspace" },
+			{ "<leader>g",  group = "[G]it" },
+			{ "<leader>;",  group = "Run Tasks" },
 		})
 	end,
 }

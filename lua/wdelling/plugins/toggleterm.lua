@@ -7,7 +7,4 @@ return {
 		insert_mappings = false,
 	},
 	config = true,
-	keys = {
-		desc = "Hello",
-	},
 }
