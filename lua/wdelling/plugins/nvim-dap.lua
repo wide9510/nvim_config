@@ -52,7 +52,7 @@ return {
 		dap.adapters.cppdbg = {
 			id = "cppdbg",
 			type = "executable",
-			command = "/home/wdelling/.vscode-server/extensions/ms-vscode.cpptools-1.21.6/debugAdapters/bin/OpenDebugAD7",
+			command = "/home/wdelling/.vscode-server/extensions/ms-vscode.cpptools-1.22.10-linux-x64/debugAdapters/bin/OpenDebugAD7",
 		}
 	end,
 }
