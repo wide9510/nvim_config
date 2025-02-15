@@ -85,6 +85,7 @@ return {
 		vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })
 		vim.keymap.set("n", "<leader>sr", builtin.lsp_references, { desc = "[S]earch [R]eferences" })
 		vim.keymap.set("n", "<leader>sc", builtin.resume, { desc = "[S]earch [C]ontinue" })
+		vim.keymap.set("n", "<leader>cc", builtin.colorscheme, { desc = "[C]hange Colorscheme" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		-- vim.keymap.set("n", "<leader>/", function()

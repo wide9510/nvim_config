@@ -13,5 +13,9 @@ return { -- You can easily change to a different colorscheme.
 
 		-- You can configure highlights by doing something like:
 		vim.cmd.hi("Comment gui=none")
+		vim.api.nvim_set_hl(0, "CmpItemAbbr", { fg = "#ebdbb2", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#fabd2f", bold = true })
+		vim.api.nvim_set_hl(0, "CmpItemKind", { fg = "#8ec07c" })
+		vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#83a598" })
 	end,
 }
